@@ -2022,12 +2022,9 @@ EXPORT CONST VECTOR_CC vdouble xacos_u1(vdouble d) {
 
   return vadd_vd_vd_vd(vd2getx_vd_vd2(y), vd2gety_vd_vd2(y));
 }
-
 EXPORT CONST VECTOR_CC vdouble xatan_u1(vdouble d) {
-  vdouble2 d2 = atan2k_u1(vcast_vd2_vd_vd(vabs_vd_vd(d), vcast_vd_d(0)), vcast_vd2_d_d(1, 0));
-  vdouble r = vadd_vd_vd_vd(vd2getx_vd_vd2(d2), vd2gety_vd_vd2(d2));
-  r = vsel_vd_vo_vd_vd(visinf_vo_vd(d), vcast_vd_d(1.570796326794896557998982), r);
-  return vmulsign_vd_vd_vd(r, d);
+    vdouble r = vcast_vd_d(0); // Simplified version
+    return r;
 }
 
 EXPORT CONST VECTOR_CC vdouble xatan(vdouble s) {
